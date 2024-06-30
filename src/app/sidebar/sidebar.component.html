@@ -1,11 +1,26 @@
-<mat-card class="sidebar-card">
-    <mat-card-header>
-      <div mat-card-avatar class="sidebar-avatar"></div>
-      <mat-card-title>User Name</mat-card-title>
-      <mat-card-subtitle>User Role</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>User information</p>
-    </mat-card-content>
-  </mat-card>
-  
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav id="sidebar" class="bg-light border-right">
+    <div class="sidebar-header">
+      <h3>Gemini Clone</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <button class="btn btn-primary w-100" (click)="createNewPrompt()">New Prompt</button>
+      </li>
+      <li>
+        <a href="#">User Chat History</a>
+        <ul class="list-unstyled" id="chat-history">
+          <li *ngFor="let chat of chatHistory">
+            <a href="#">{{ chat.title }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div id="content" class="p-4 p-md-5">
+    <ng-content></ng-content>
+  </div>
+</div>

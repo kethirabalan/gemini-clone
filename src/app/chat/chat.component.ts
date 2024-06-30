@@ -5,24 +5,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ChatService } from '../service/chat.service';
 import { GeminiService } from '../service/gemini.service';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [MatFormFieldModule,FormsModule,CommonModule,MatInputModule,],
+  imports: [MatFormFieldModule,FormsModule,CommonModule,MatInputModule,SidebarComponent],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent {
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef | undefined;
-  
-  users = [
-    { name: 'User1' },
-    { name: 'User2' },
-    { name: 'User3' }
-  ];
-  selectedUser: any = null;
-
   newMessage: string = '';
   messages: any[] = [];
 
@@ -33,11 +26,6 @@ export class ChatComponent {
         this.scrollToBottom();
       }
     });
-  }
-
-  selectUser(user: any) {
-    this.selectedUser = user;
-    this.messages = [];
   }
 
   async sendMessage(): Promise<void> {

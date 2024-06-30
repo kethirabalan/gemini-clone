@@ -1,19 +1,12 @@
 <div class="container-fluid chat-container">
   <div class="row">
     <div class="sidebar">
-      <div class="user-list">
-        <h2>Users</h2>
-        <ul class="list-group">
-          <li *ngFor="let user of users" class="list-group-item" (click)="selectUser(user)">
-            {{ user.name }}
-          </li>
-        </ul>
-      </div>
+      <app-sidebar></app-sidebar>
     </div>
 
     <div class="chat-main">
       <div class="chat-header">
-        <h2>Chat with {{ selectedUser?.name }}</h2>
+        <h2>Gemini</h2>
       </div>
 
       <div class="chat-messages" #chatMessages>
