@@ -1,28 +1,28 @@
 .menu{
   padding: 10px;
+  margin-top: 5px;
 }
 
-
-.form-control{
-  border-radius: 30px;
+.right-menu{
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 45px;
 }
 
-.input-wrapper {
-  position: relative;
+.tik{
+  margin-left: 145px;
 }
 
-.input-wrapper input {
-  padding-right: 50px; /* Adjust based on the icon size */
+.header{
+  margin-top: 12px;
+  padding: 6px 0;
 }
 
-.input-wrapper .icon {
-  position: absolute;
-  right: 35px; /* Adjust based on the icon size and spacing */
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
+.advanced{
+  width:18px;
 }
 
-.input-wrapper .bi-mic {
-  right: 10px; /* Adjust the position of the second icon */
+gradient-text {
+ color: #33ccff;
 }

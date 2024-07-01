@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-6">
+            <section class="py-2 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="gradient-text">Hello, Dev</h1>
+                        <p class="text-body-secondary font-weight-bold">How can I help you today?</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="album py-1">
+                <div class="container">
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text">Create a futuristic image of a car</p>
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary mt-4"><i
+                                                    class="bi bi-pen"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text">Outline an organized & logical sales pitch for a new product
+                                    </p>
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary"><i
+                                                    class="bi bi-pen"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text">Help me craft a text response to a friend</p>
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary mt-4"><i
+                                                    class="bi bi-pen"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text">Create an image & bedtime story</p>
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary mt-4"><i
+                                                    class="bi bi-pen"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container chat-messages" #chatMessages>
+                <div class="message" *ngFor="let message of messages">
+                    <div class="message-content"
+                        [ngClass]="{'user-message': message.from === 'user', 'bot-message': message.from === 'bot'}">
+                        {{ message.message }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer mt-auto py-5">
+                <div class="container">
+                    <div class="chat-input">
+                        <div class="form-group row">
+                            <div class="col">
+                                <div class="input-wrapper">
+                                    <input type="text" class="form-control" placeholder="Enter a prompt here"
+                                        [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+                                    <div class="input-icon">
+                                        <span><i class="bi bi-file-earmark-plus icon mx-2"></i></span>
+                                        <span><i class="bi bi-mic icon mx-2"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>

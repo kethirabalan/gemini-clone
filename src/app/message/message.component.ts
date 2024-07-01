@@ -1,20 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { GeminiService } from '../service/gemini.service';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-import { MessageComponent } from '../message/message.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-chat',
+  selector: 'app-message',
   standalone: true,
-  imports: [MatFormFieldModule,FormsModule,CommonModule,MatInputModule,SidebarComponent,MessageComponent],
-  templateUrl: './chat.component.html',
-  styleUrl: './chat.component.scss'
+  imports: [CommonModule,FormsModule],
+  templateUrl: './message.component.html',
+  styleUrl: './message.component.scss'
 })
-export class ChatComponent {
+export class MessageComponent {
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef | undefined;
   newMessage: string = '';
   messages: any[] = [];

@@ -1,0 +1,48 @@
+.form-control{
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+
+  .chat-messages{
+    margin-top: 45px;
+  }
+  
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-wrapper input {
+    padding-right: 50px; /* Adjust based on the icon size */
+  }
+  
+  .input-wrapper .icon {
+    position: absolute;
+    right: 35px; /* Adjust based on the icon size and spacing */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .input-wrapper .bi-mic {
+    right: 10px; /* Adjust the position of the second icon */
+  }
+
+  .card-body{
+    padding: 10px;
+  }
+
+  .gradient-text{
+    color: #33ccff;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+}
+
+/* Show dropdown menu on click */
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+  
+  

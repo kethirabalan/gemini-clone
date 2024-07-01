@@ -1,58 +1,46 @@
 <div class="container-fluid chat-container">
   <div class="row">
     <div class="sidebar">
-      <!-- <app-sidebar></app-sidebar> -->
-    </div>
-    
-    <div class="col chat-main">
-      <div class="chat-header d-flex align-items-center justify-content-between">
-        <div class="dropdown">
-          <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gemini
+<app-sidebar></app-sidebar>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Gemini
+        </a>
+        <ul class="dropdown-menu menu" aria-labelledby="navbarDropdownMenuLink">
+          <li class="d-flex align-items-center">
+            <a class="dropdown-item">
+            <img src="../../../public/assets/gemini_sparkle_.svg" href="#" alt="Gemini">
+            Gemini<i class="bi bi-check-circle tik"></i></a>
+          </li>
+          <li class="d-flex align-items-center">
+            <a class="dropdown-item">
+            <img src="../../../public/assets/gemini_sparkle_v002_advanced.svg" href="#" alt="Gemini_Advanced">Gemini Advanced</a>
+            <a class="btn btn-light w-100">Upgrade</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img class="advanced" src="../../../public/assets/gemini_sparkle_v002_advanced.svg" alt="Gemini_Advanced">
+            Try Gemini Advanced
           </a>
-          <ul class="dropdown-menu menu">
-            <li class="d-flex align-items-center">
-              <img src="../../../public/assets/gemini_sparkle_.svg" alt="Gemini" class="me-2">
-              <a class="dropdown-item" href="#">Gemini</a>
-              <span><i class="bi bi-check-circle"></i></span>
-            </li>
-            <li class="d-flex align-items-center">
-              <img src="../../../public/assets/gemini_sparkle_v002_advanced.svg" alt="Gemini_Advanced" class="me-2">
-              <a class="dropdown-item" href="#">Gemini Advanced</a>
-              <a class="btn btn-primary w-100">Upgrade</a>
-            </li>
-          </ul>
-        </div>
-        <a class="btn btn-light">Try Gemini Advanced</a>
-        <i class="bi bi-grid-3x3-gap-fill"></i>
-        <i class="bi bi-person-circle"></i>
-      </div>
-
-      <!-- Chat Messages -->
-      <div class="chat-messages" #chatMessages>
-        <div class="message" *ngFor="let message of messages">
-          <div class="message-content" 
-               [ngClass]="{'user-message': message.from === 'user', 'bot-message': message.from === 'bot'}">
-            {{ message.message }}
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-input">
-        <div class="form-group row">
-          <div class="col">
-            <div class="input-wrapper">
-              <input type="text" class="form-control" placeholder="Enter a prompt here" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
-              <div class="input-icon">
-              <span><i class="bi bi-file-earmark-plus icon"></i></span>
-              <span><i class="bi bi-mic icon"></i></span>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-grid-3x3-gap-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i></a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
+</nav>
 
-      
+<app-message></app-message>
