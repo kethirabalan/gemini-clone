@@ -3,7 +3,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ChatService } from '../service/chat.service';
 import { GeminiService } from '../service/gemini.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 

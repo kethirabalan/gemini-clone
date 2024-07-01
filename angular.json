@@ -28,13 +28,15 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "public"
               }
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "@angular/material/prebuilt-themes/azure-blue.css"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -103,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "98d0cc7e-dfee-486b-a6ee-4c078c09e706"
   }
 }

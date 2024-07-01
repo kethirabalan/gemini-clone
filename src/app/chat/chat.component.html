@@ -1,17 +1,38 @@
 <div class="container-fluid chat-container">
   <div class="row">
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <!-- <app-sidebar></app-sidebar> -->
     </div>
-
-    <div class="chat-main">
-      <div class="chat-header">
-        <h2>Gemini</h2>
+    
+    <div class="col chat-main">
+      <div class="chat-header d-flex align-items-center justify-content-between">
+        <div class="dropdown">
+          <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gemini
+          </a>
+          <ul class="dropdown-menu menu">
+            <li class="d-flex align-items-center">
+              <img src="../../../public/assets/gemini_sparkle_.svg" alt="Gemini" class="me-2">
+              <a class="dropdown-item" href="#">Gemini</a>
+              <span><i class="bi bi-check-circle"></i></span>
+            </li>
+            <li class="d-flex align-items-center">
+              <img src="../../../public/assets/gemini_sparkle_v002_advanced.svg" alt="Gemini_Advanced" class="me-2">
+              <a class="dropdown-item" href="#">Gemini Advanced</a>
+              <a class="btn btn-primary w-100">Upgrade</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-light">Try Gemini Advanced</a>
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+        <i class="bi bi-person-circle"></i>
       </div>
 
+      <!-- Chat Messages -->
       <div class="chat-messages" #chatMessages>
         <div class="message" *ngFor="let message of messages">
-          <div class="message-content" [ngClass]="{'user-message': message.from === 'user', 'bot-message': message.from === 'bot'}">
+          <div class="message-content" 
+               [ngClass]="{'user-message': message.from === 'user', 'bot-message': message.from === 'bot'}">
             {{ message.message }}
           </div>
         </div>
@@ -20,13 +41,18 @@
       <div class="chat-input">
         <div class="form-group row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Type a message..." [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
-          </div>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-primary" (click)="sendMessage()">Send</button>
+            <div class="input-wrapper">
+              <input type="text" class="form-control" placeholder="Enter a prompt here" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+              <div class="input-icon">
+              <span><i class="bi bi-file-earmark-plus icon"></i></span>
+              <span><i class="bi bi-mic icon"></i></span>
+            </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+      
