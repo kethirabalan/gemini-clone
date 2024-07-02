@@ -7,7 +7,6 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
-import { getStorage, provideStorage } from '@angular/fire/storage';
 import { getAnalytics } from "firebase/analytics";
 import { getAnalytics as getAnalytics_alias, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 
@@ -26,7 +25,6 @@ export const appConfig: ApplicationConfig = {
      provideRouter(routes),
      provideAnimationsAsync(),
      provideHttpClient(withFetch()),
-    //  provideClientHydration(),
      provideFirebaseApp(() => initializeApp(firebaseConfig)),
      provideAuth(() => getAuth()),
      provideFirestore(() => getFirestore()),

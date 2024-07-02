@@ -28,7 +28,6 @@ export class MessageComponent {
   }
 
   ngOnInit(): void {
-    // Replace 'uid' with the actual user ID obtained after signup
     this.userName$ = this.userService.getUser('uid').pipe(
       map(user => user?.displayName)
     );

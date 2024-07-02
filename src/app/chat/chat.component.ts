@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { GeminiService } from '../service/gemini.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { MessageComponent } from '../message/message.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [MatFormFieldModule,FormsModule,CommonModule,MatInputModule,SidebarComponent,MessageComponent],
+  imports: [MatFormFieldModule,FormsModule,CommonModule,MatInputModule,SidebarComponent,MessageComponent,RouterLink],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })

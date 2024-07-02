@@ -2,41 +2,95 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="../../../public/assets/signupimg.svg" alt="Image" class="img-fluid">
+                <img src="../../../public/assets/artificial.avif" alt="Image" class="img-fluid">
             </div>
             <div class="col-md-6 contents">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="mb-4">
-                            <h3>Sign In</h3>
+                            <h3 *ngIf="!isSignup">Sign In</h3>
+                            <h3 *ngIf="isSignup">Sign Up</h3>
                         </div>
-                        <form action="#" method="post">
-                            <div class="form-group first">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username">
+                        <form action="#" (ngSubmit)="signin()" class="layout"  method="post">
+                            <div *ngIf="!isSignup">
+                                <div class="form-group first">
+                                    <label for="useremail">Useremail</label>
+                                    <input type="text" class="form-control" id="useremail"
+                                        [(ngModel)]="signinObj.useremail" required>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        [(ngModel)]="signinObj.password" required>
+                                    <button type="button" class="btn btn-light eye"
+                                        (click)="togglePasswordVisibility('signup')">
+                                        <i [ngClass]="showSignupPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-0">
+                                        <span class="caption">Remember me</span>
+                                        <input type="checkbox" checked="checked" class="mx-2" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a routerLink="#" class="forgot-pass">Forgot
+                                            Password</a></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <input type="submit" value="Log In" class="btn btn-block btn-primary mx-1">
+                                    </div>
+                                    <div class="col-4 mx-2">
+                                        <button type="button" href="#" (click)="toggleForm()"
+                                            class="btn btn-block btn-danger">
+                                            Sign Up
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group last mb-4">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password">
+
+
+                            <div *ngIf="isSignup" (ngSubmit)="signup()" class="layout">
+                                <div class="form-group first">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username"
+                                        [(ngModel)]="signupObj.userName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" [(ngModel)]="signupObj.useremail"
+                                        required>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        [(ngModel)]="signupObj.userpassword" required>
+                                    <button type="button" class="btn btn-light eye"
+                                        (click)="togglePasswordVisibility('signup')">
+                                        <i [ngClass]="showSignupPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                                    </button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <input type="submit" value="Sign Up" class="btn btn-block btn-primary">
+                                    </div>
+                                    <div class="col mx-3">
+                                        <button type="button" href="#" (click)="toggleForm()"
+                                            class="btn btn-block btn-danger">
+                                            Back to Login
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex mb-5 align-items-center">
-                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                                    <input type="checkbox" checked="checked" class="mx-2"/>
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
-                            </div>
-                            <input type="submit" value="Log In" class="btn btn-block btn-primary">
-                            <input type="submit" value="Sign Up" class="btn btn-block btn-primary mx-2">
                             <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
                             <div class="social-login">
-                                <a href="#" class="facebook">
+                                <a routerLink="#" class="facebook" (click)="FacebookSignIn()">
                                     <span><i class="bi bi-facebook mx-3"></i></span>
                                 </a>
-                                <a href="#" class="twitter">
+                                <a routerLink="#" class="twitter" (click)="TwitterSignIn()">
                                     <span><i class="bi bi-twitter mx-3"></i></span>
                                 </a>
-                                <a href="#" class="google">
+                                <a routerLink="#" class="google" (click)="googleSignIn()">
                                     <span><i class="bi bi-google mx-3"></i></span>
                                 </a>
                             </div>
