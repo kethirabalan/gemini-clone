@@ -11,11 +11,11 @@ export class GeminiService {
   private messageHistory: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor() {
-    this.generativeAI = new GoogleGenerativeAI('AIzaSyCnIVj3dqi_PcGPL7nJubl-dn2nYV4EuKQ');
+    this.generativeAI = new GoogleGenerativeAI('AIzaSyBUoUG6zdV3D0KsEqt-k7Fxh2GaN24ZObY');
   }
 
   async generateText(prompt: string) {
-    const model = this.generativeAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = this.generativeAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     this.messageHistory.next({
       from: 'user',
